@@ -3,7 +3,7 @@ const axios = require("axios");
 const getRandom = async (req, res) => {
 	var list = [];
 	let response = await axios
-		.get("https://quoter-211a2-default-rtdb.firebaseio.com/garyvee.json")
+		.get("https://quoter-211a2-default-rtdb.firebaseio.com/buddy-the-elf.json")
 		.then((res) => {
 			const data = res.data;
 			const items = [];
@@ -16,9 +16,9 @@ const getRandom = async (req, res) => {
 			return items;
 		});
         
-	const gvee = list[Math.floor(Math.random() * list.length)]
-	res.send(gvee.text);
-	return gvee.text;
+	const buddy = list[Math.floor(Math.random() * list.length)]
+	res.send(buddy);
+	return buddy;
 };
 
 module.exports = { getRandom };
